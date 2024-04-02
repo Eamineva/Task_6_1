@@ -13,8 +13,7 @@ public class servlet extends AbstractAnnotationConfigDispatcherServletInitialize
     }
 
 
-    // Добавление конфигурации, в которой инициализируем ViewResolver, для корректного отображения jsp.
-    @Override
+       @Override
     protected Class<?>[] getServletConfigClasses() {
         return new Class<?>[]{
                 beanspring.class

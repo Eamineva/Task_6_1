@@ -21,7 +21,7 @@ public class UserDaoImp implements UserDao{
     }
 
     public void delUser(long id) {
-        //entityManager.find(User.class, id);
+
         entityManager.remove(entityManager.find(User.class, id));
 
     }
@@ -29,16 +29,12 @@ public class UserDaoImp implements UserDao{
     @Override
     public void updUser(long id, User user) {
 
-//        User user = entityManager.find(User.class, id);
-//        if (user != null){
-//            user.setName(update);
-//        }
-        //entityManager.refresh(entityManager.find(User.class, id));
+
         User userup = show(id);
         userup.setName(user.getName());
         userup.setSurname(user.getSurname());
         userup.setEmail(user.getEmail());
-        //entityManager.refresh(entityManager.find(User, id));
+
     }
 
     @Override
@@ -50,8 +46,5 @@ public class UserDaoImp implements UserDao{
         return entityManager.find(User.class, id);
     }
 
-    /*public void updUser(User user) {
-        entityManager.persist(user);
 
-    }*/
 }

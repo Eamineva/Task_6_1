@@ -60,9 +60,7 @@ table.comicGreen tfoot td {
             </form>
         </td>
         <td>
-            <!--<form th:method="delUser" th:action="@{/users/{id}(id=${user.getId()})}">
-                <input type="submit" value="Удалить"/>
-            </form>-->
+
             <form th:method="delUser" th:action="@{delUser}">
                 <input type="submit" value="Удалить"/>
                 <input type="hidden" name="id" th:value="${user.id}">
@@ -81,11 +79,7 @@ table.comicGreen tfoot td {
         </form>
     </td>
 
-    <!--<td>
-        <form action="/users">
-            <button type="submit">Показать всех пользователей</button>
-        </form>
-    </td>-->
+
     </tr>
 </table>
 </body>

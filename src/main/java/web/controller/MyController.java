@@ -10,9 +10,7 @@ import web.service.UserService;
 
 @Controller
 public class MyController {
-   // @Autowired
 
-   // private UserService userService;
     private final UserService userService;
 @Autowired
     public MyController(UserService userService) {
@@ -22,7 +20,7 @@ public class MyController {
     @GetMapping ("/")
     public String ShowUser(Model model){
 
-       // List<User> allUsers = userService.listUsers();
+
         model.addAttribute("users",userService.listUsers());
 
         return "index";
@@ -44,10 +42,10 @@ public class MyController {
         return "redirect:/";
     }
 
-    //updateUser
+
     @GetMapping ("/upUser")
     public String upUser (Model model, long id){
-        // User user1=new User();
+
         model.addAttribute("user", userService.show(id));
         return "user_update";
     }
@@ -57,8 +55,5 @@ public class MyController {
         userService.updUser(id, user);
         return "redirect:/";
     }
-/*    @DeleteMapping("/remove/{id}")
-    public  String delUser (@PathVariable ("id") Long id){
 
-    }*/
 }

@@ -42,5 +42,5 @@ public class UserServiceImp implements UserService {
     public User show(long id) {
         return userDao.show(id);
     }
-//    public User show(long id)
+
 }
